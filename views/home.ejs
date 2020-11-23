@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <% results.forEach(element=>{ %>
+            <h2> <%= element.name %> </h2>
+            <img src="<%= element.img %>" alt="">
+            <p> <%= element.level %> </p>
+            <form action="/my-cards" method="POST">
+                <input type="hidden" name="name" value="<%= element.name %>">
+                <input type="hidden" name="image" value="<%= element.img %>">
+                <input type="hidden" name="level" value="<%= element.level %>">
+                <button type="submit">ADD TO FAVORITE</button>
+            </form>
+
+       <% }) %>
+</body>
+</html>
